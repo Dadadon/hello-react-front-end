@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { setRandomGreeting } from './actions'; // Import your action creator
 
-const Greeting = () => {
-  const [randomGreeting, setRandomGreeting] = useState('');
-
+const Greeting = ({ randomGreeting, setRandomGreeting }) => {
   useEffect(() => {
     fetch('http://127.0.0.1:3000/random_greeting')
       .then((response) => {
@@ -23,4 +23,8 @@ const Greeting = () => {
   );
 };
 
-export default Greeting;
+const mapStateToProps = (state) => ({
+  randomGreeting: state.greeting.randomGreeting,
+});
+
+export default connect(mapStateToProps, { setRandomGreeting })(Greeting);

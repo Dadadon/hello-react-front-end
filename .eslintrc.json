@@ -19,8 +19,8 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "declaration-colon-newline-after": null,
-    "value-list-comma-newline-after": null
+    "declaration-colon-newline-after": "off",
+    "value-list-comma-newline-after": "off"
   },
   "ignorePatterns": [
     "dist/",
